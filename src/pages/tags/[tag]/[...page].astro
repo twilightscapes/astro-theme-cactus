@@ -49,22 +49,24 @@ const paginationProps = {
 };
 ---
 
+<div class="spacer" style={{ height: "", border: "0px solid yellow" }}></div>
 <PageLayout meta={meta}>
 	<h1 class="title mb-6 flex items-center">
 		<a href="/tags/" class="text-accent sm:hover:underline">Tags</a>
 		<span class="me-3 ms-2">→</span>
 		<span class="text-xl">#{tag}</span>
 	</h1>
-	<section aria-label="Blog post list">
-		<ul class="space-y-8">
+	<div class="scroll-container">
+		<div class="contentpanel horizontal-scroll panels">
 			{
 				page.data.map((p) => (
-					<li class="flex flex-col flex-wrap gap-2 sm:flex-row [&_q]:basis-full">
-						<PostPreview post={p} as="h2" withDesc />
-					</li>
+					<>
+						<div class="sliderSpacer" style={{ height: "", paddingTop: "", display: "" }} />
+						<PostPreview post={p} as="h2" />
+					</>
 				))
 			}
-		</ul>
-		<Pagination {...paginationProps} />
-	</section>
+		</div>
+	</div>
+	<Pagination {...paginationProps} />
 </PageLayout>
