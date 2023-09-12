@@ -37,17 +37,17 @@ export default defineConfig({
 });
 
 function rawFonts(ext: Array<string>) {
-  return {
-    name: 'vite-plugin-raw-fonts',
+	return {
+		name: 'vite-plugin-raw-fonts',
 		// @ts-ignore:next-line
-    transform(_, id) {
-      if (ext.some(e => id.endsWith(e))) {
-        const buffer = fs.readFileSync(id);
-        return {
-          code: `export default ${JSON.stringify(buffer)}`,
-          map: null
-        };
-      }
-    }
-  };
+		transform(_, id) {
+			if (ext.some(e => id.endsWith(e))) {
+				const buffer = fs.readFileSync(id);
+				return {
+					code: `export default ${JSON.stringify(buffer)}`,
+					map: null
+				};
+			}
+		}
+	};
 }

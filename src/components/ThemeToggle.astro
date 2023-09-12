@@ -34,6 +34,14 @@
 	<button
 		type="button"
 		id="toggle-theme"
+		style={{
+			display: "flex",
+			flexDirection: "column",
+			justifyContent: "center",
+			alignItems: "center",
+			marginTop: "0px",
+			textAlign: "center",
+		}}
 		class="group relative h-9 w-9 rounded-md p-2 ring-zinc-400 transition-all hover:ring-2"
 		aria-label="Toggle Dark Mode"
 	>
@@ -103,11 +111,11 @@
 
 {/* Inlined to avoid FOUC on full page load, runs once to set initial attribute */}
 <script is:inline>
-	const button = document.getElementById("toggle-theme");
+const button = document.getElementById("toggle-theme");
 
-	function setButtonPresssed() {
-		const bodyThemeIsDark = document.documentElement.classList.contains("dark");
-		button.setAttribute("aria-pressed", String(bodyThemeIsDark));
-	}
-	setButtonPresssed();
+function setButtonPresssed() {
+	const bodyThemeIsDark = document.documentElement.classList.contains("dark");
+	button.setAttribute("aria-pressed", String(bodyThemeIsDark));
+}
+setButtonPresssed();
 </script>

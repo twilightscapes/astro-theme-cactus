@@ -4,6 +4,7 @@ import type { CollectionEntry } from "astro:content";
 import BaseLayout from "./Base.astro";
 import BlogHero from "@/components/blog/Hero";
 import TOC from "@/components/blog/TOC";
+import { ViewTransitions } from "astro:transitions";
 
 interface Props {
 	post: CollectionEntry<"post">;
@@ -39,7 +40,8 @@ const { headings } = await post.render();
 </script>
 
 <BaseLayout meta={{ title, description, articleDate, ogImage: socialImage }}>
-	<div class="gap-x-10 lg:flex lg:items-start">
+	<ViewTransitions />
+	<div class="gap-x-10 lg:flex lg:items-start" transition:animate="slide">
 		{!!headings.length && <TOC headings={headings} />}
 		<article class="flex-grow break-words" data-pagefind-body>
 			<div id="blog-hero"><BlogHero content={post} /></div>

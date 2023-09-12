@@ -5,7 +5,7 @@ import type { SiteMeta } from "@/data/types";
 import BaseHead from "@/components/BaseHead";
 import ThemeProvider from "@/components/ThemeProvider";
 import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
+// import Footer from "@/components/layout/Footer";
 import SkipLink from "@/components/SkipLink";
 import { siteConfig } from "@/site-config";
 
@@ -27,9 +27,10 @@ const {
 		<ThemeProvider />
 		<SkipLink />
 		<Header />
-		<main id="main">
+
+		<main id="main" transition:animate="slide">
 			<slot />
 		</main>
-		<Footer />
+		<!-- <Footer /> -->
 	</body>
 </html>
