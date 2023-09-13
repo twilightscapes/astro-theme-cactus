@@ -38,8 +38,8 @@ export default defineConfig({
 					branch: 'main',
 				},
 				// Configure where our media assets are stored & served from
-				media_folder: '',
-				public_folder: '',
+				media_folder: '{{slug}}',
+				public_folder: '{{slug}}',
 				// Configure the content collections
 				collections: [
 					{
@@ -48,8 +48,8 @@ export default defineConfig({
 						label: 'Blog Posts',
 						label_singular: 'Blog Post',
 						path: '{{slug}}/index',
-						media_folder: '',
-						public_folder: '',
+						media_folder: './src/content/post/{{slug}}',
+						public_folder: '{{media_folder}}/{{slug}}',
 						create: true,
 						delete: true,
 						fields: [

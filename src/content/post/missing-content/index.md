@@ -6,8 +6,9 @@ tags:
   - test
   - toc
 coverImage:
-  src: ./noimage.png
+  src: ./blue-edges.png
   alt: Astro build wallpaper
+coverImage.src: blue-edges.png
 ---
 Look for your name on the Pizza Portal TM in our lobby and use code **616** to pick up your order.
 
