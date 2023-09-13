@@ -20,7 +20,8 @@ const dateTimeOptions: Intl.DateTimeFormatOptions = {
 
 {
 	data.coverImage && (
-		<div class="aspect-h-9 aspect-w-16 mb-6">
+		// <div class="aspect-h-9 aspect-w-16 mb-6">
+		<div style={{ display: "flex", justifyContent: "center" }}>
 			<Image
 				src={data.coverImage.src}
 				alt={data.coverImage.alt}
@@ -31,8 +32,9 @@ const dateTimeOptions: Intl.DateTimeFormatOptions = {
 		</div>
 	)
 }
-<h1 class="title mb-3 sm:mb-1">{data.title}</h1>
-<div class="flex flex-wrap items-center gap-x-3 gap-y-2">
+<h1 class="title">{data.title}</h1>
+<div class="" style={{ margin: "0 4%", border: "2px solid blue" }}>
+	<!-- <div class="flex flex-wrap items-center gap-x-3 gap-y-2"> -->
 	<p class="font-semibold">
 		<FormattedDate date={data.publishDate} dateTimeOptions={dateTimeOptions} /> /{" "}
 		{remarkPluginFrontmatter.minutesRead}
@@ -48,7 +50,7 @@ const dateTimeOptions: Intl.DateTimeFormatOptions = {
 </div>
 {
 	!!data.tags?.length && (
-		<div class="mt-3">
+		<div class="">
 			<svg
 				aria-hidden="true"
 				focusable="false"

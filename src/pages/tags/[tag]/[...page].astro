@@ -51,17 +51,17 @@ const paginationProps = {
 
 <div class="spacer" style={{ height: "", border: "0px solid yellow" }}></div>
 <PageLayout meta={meta}>
-	<h1 class="title mb-6 flex items-center">
+	<h1 class="title mb-6 flex items-center" style={{ padding: "0 4%" }}>
 		<a href="/tags/" class="text-accent sm:hover:underline">Tags</a>
 		<span class="me-3 ms-2">→</span>
 		<span class="text-xl">#{tag}</span>
 	</h1>
 	<div class="scroll-container">
 		<div class="contentpanel horizontal-scroll panels">
+			<div class="sliderSpacer" style={{ height: "", paddingTop: "", display: "" }}></div>
 			{
 				page.data.map((p) => (
 					<>
-						<div class="sliderSpacer" style={{ height: "", paddingTop: "", display: "" }} />
 						<PostPreview post={p} as="h2" />
 					</>
 				))
