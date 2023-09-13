@@ -9,7 +9,7 @@ coverImage:
 tags:
   - test
   - image
-featuredImage: 11327077_948924101824911_1622626588_n.jpg
+featuredImage: ./11327077_948924101824911_1622626588_n.jpg
 ---
 
 <!-- ![Booya](./cover.png) -->
