@@ -56,7 +56,7 @@ export default defineConfig({
 							{ name: 'title', widget: 'string', label: 'Post Title' },
 							{
 								label: "Featured Image",
-								name: "coverImage",
+								name: "featuredImage",
 								widget: "image",
 								hint: "The primary image used for all social media, blog previews and the feature image at the top of the post",
 								required: false,
