@@ -21,7 +21,11 @@
   }
 }
 
-// html {overflow-x:hidden !important;}
+html {
+  overflow-x: hidden !important;
+  background-color: #222;
+}
+
 html,
 body {
   height: 100vh;
