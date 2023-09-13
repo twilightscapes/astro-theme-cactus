@@ -1,12 +1,15 @@
 ---
-title: "Example Cover Image"
-description: "This post is an example of how to add a cover image"
-publishDate: "04 July 2023"
-updatedDate: "14 August 2023"
+title: Example Cover Image
+publishDate: 04 July 2023
+description: This post is an example of how to add a cover image
+updatedDate: 14 August 2023
 coverImage:
-  src: "./cover.png"
-  alt: "Astro build wallpaper"
-tags: ["test", "image"]
+  src: ./cover.png
+  alt: Astro build wallpaper
+tags:
+  - test
+  - image
+featuredImage: 11327077_948924101824911_1622626588_n.jpg
 ---
 
 <!-- ![Booya](./cover.png) -->
