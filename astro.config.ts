@@ -38,8 +38,8 @@ export default defineConfig({
 					branch: 'main',
 				},
 				// Configure where our media assets are stored & served from
-				media_folder: 'public/',
-				public_folder: '/',
+				media_folder: 'src/content',
+				public_folder: '/content/post',
 				// Configure the content collections
 				collections: [
 					{
@@ -56,7 +56,7 @@ export default defineConfig({
 							{ name: 'title', widget: 'string', label: 'Post Title' },
 							{
 								label: "Featured Image",
-								name: "featuredImage",
+								name: "coverImage",
 								widget: "image",
 								hint: "The primary image used for all social media, blog previews and the feature image at the top of the post",
 								required: false,
