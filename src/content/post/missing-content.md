@@ -9,7 +9,6 @@ tags:
 coverImage:
   src: ./noimage.png
   alt: Astro build wallpaper
-layout: ../../layouts/BlogPost.astro
 ---
 Look for your name on the Pizza Portal TM in our lobby and use code **616** to pick up your order.
 
