@@ -35,18 +35,18 @@ export default defineConfig({
 				// Use Netlify’s “Git Gateway” authentication and target our default branch
 				backend: {
 					name: 'git-gateway',
-					branch: 'latest',
+					branch: 'main',
 				},
 				// Configure where our media assets are stored & served from
-				media_folder: 'public/assets/blog',
-				public_folder: '/assets/blog',
+				media_folder: 'public/',
+				public_folder: '/',
 				// Configure the content collections
 				collections: [
 					{
 						name: 'posts',
 						label: 'Blog Posts',
 						label_singular: 'Blog Post',
-						folder: 'src/pages/posts',
+						folder: 'src/content/post',
 						create: true,
 						delete: true,
 						fields: [
