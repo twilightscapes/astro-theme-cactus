@@ -4,7 +4,7 @@ import Search from "../Search.astro";
 import { menuLinks } from "@/site-config";
 // import { Image } from "astro:assets";
 import localBirdImage from "../../../src/assets/pirate-logo.png";
-
+import Switch from "./switch.jsx";
 // import BiGridHorizontal from "react-icons/bi";
 // import { MdOutlineRectangle } from "react-icons/md";
 const url = new URL(Astro.request.url);
@@ -99,20 +99,6 @@ const url = new URL(Astro.request.url);
 		<Search />
 		<ThemeToggle />
 
-		<button
-			aria-label="Grid/Swipe View"
-			onclick=""
-			class="swipescroll"
-			style={{
-				display: "flex",
-				flexDirection: "column",
-				justifyContent: "center",
-				alignItems: "center",
-				marginTop: "0px",
-				textAlign: "center",
-			}}
-		>
-			<span class="themetext"> THEME</span>
-		</button>
+		<Switch />
 	</div>
 </div>
