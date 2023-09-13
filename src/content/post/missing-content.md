@@ -1,8 +1,7 @@
 ---
 title: This post is Bullshit
 publishDate: 22 Feb 2023
-description: This post is purely for testing the table of content, which should
-  not be rendered
+description: This is the post description.
 tags:
   - test
   - toc
