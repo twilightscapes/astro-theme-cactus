@@ -63,6 +63,17 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
 		<!-- <div class="contentpanel grid-container"> -->
 		<div class="sliderSpacer" style={{ height: "", paddingTop: "", display: "" }}></div>
 		{allPostsByDate.map((p) => <PostPreview post={p} />)}
+		<div
+			style={{ textAlign: "center", display: "grid", placeContent: "center", padding: "10% 0 0 0" }}
+		>
+			<a
+				class="button"
+				href="/posts/2/"
+				style={{ textDecoration: "none", color: "inherit", textAlign: "center" }}
+			>
+				View More
+			</a>
+		</div>
 	</div>
 </div>
 <!-- </section> -->
