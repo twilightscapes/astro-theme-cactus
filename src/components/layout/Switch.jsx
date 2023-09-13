@@ -1,8 +1,6 @@
 // Header.js
 import React, { useState, useEffect, useCallback } from "react";
-import ThemeToggle from "../ThemeToggle.astro";
-import Search from "../Search.astro";
-import { menuLinks } from "@/site-config";
+
 
 function Header() {
     const [archiveView, setArchiveView] = useState("");
@@ -49,7 +47,7 @@ function Header() {
         console.log("Button clicked"); // Add this line
     };
 
-    console.log("toggleArchiveView function called");
+
 
     return (
         <div>
