@@ -1,12 +1,18 @@
 ---
-title: "Testing testing 123"
-publishDate: "13 May 2022"
-description: "Hello world!!! This is an example blog post showcasing some of the cool stuff Astro Cactus theme can do."
+title: Testing testing 123
+publishDate: 13 May 2022
+description: Hello world!!! This is an example blog post showcasing some of the
+  cool stuff Astro Cactus theme can do.
 coverImage:
-  src: "./pug.jpeg"
-  alt: "Astro build wallpaper"
-tags: ["example", "blog", "cool"]
+  src: ./pug.jpeg
+  alt: Astro build wallpaper
+tags:
+  - example
+  - blog
+  - cool
+featuredImage: pug.jpeg
 ---
+![ddss](pug.jpeg)
 
 ## Hello World
 
@@ -28,13 +34,13 @@ You can choose your own theme from this [library](https://github.com/shikijs/shi
 
 Here is a horizontal rule.
 
----
+- - -
 
 Here is a list:
 
-- Item number 1
-- Item number 2
-- Item number 3
+* Item number 1
+* Item number 2
+* Item number 3
 
 And an ordered list:
 
@@ -44,10 +50,10 @@ And an ordered list:
 
 Here is a table:
 
-| Item         | Price | # In stock |
-| ------------ | :---: | ---------: |
-| Juicy Apples | 1.99  |        739 |
-| Bananas      | 1.89  |          6 |
+| Item         | Price | \# In stock |
+| ------------ | ----- | ----------- |
+| Juicy Apples | 1.99  | 739         |
+| Bananas      | 1.89  | 6           |
 
 ## Tailwind CSS Prose styling
 
