@@ -67,6 +67,7 @@ export default defineConfig({
 								name: 'layout',
 								widget: 'select',
 								default: '../../layouts/BlogPost.astro',
+								required: false,
 								options: [
 									{ label: 'Blog Post', value: '../../layouts/BlogPost.astro' },
 								],
