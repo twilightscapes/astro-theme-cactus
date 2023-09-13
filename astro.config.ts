@@ -69,7 +69,7 @@ export default defineConfig({
 								default: '../../layouts/BlogPost.astro',
 								required: false,
 								options: [
-									{ label: 'Blog Post', value: '../../layouts/BlogPost.astro' },
+									{ label: 'Blog Post', value: '../../layouts/BlogPost.astro', },
 								],
 							},
 						],

@@ -1,7 +1,7 @@
 ---
 title: This post is Bullshit
 publishDate: 22 Feb 2023
-description: This is the post description.
+description: This is the name on the Pizza Portal post description.
 tags:
   - test
   - toc
