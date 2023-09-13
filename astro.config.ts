@@ -43,7 +43,7 @@ export default defineConfig({
 				// Configure the content collections
 				collections: [
 					{
-						folder: "content/post",
+						folder: "src/content/post",
 						name: 'posts',
 						label: 'Blog Posts',
 						label_singular: 'Blog Post',
