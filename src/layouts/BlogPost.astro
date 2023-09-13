@@ -10,6 +10,11 @@ interface Props {
 	post: CollectionEntry<"post">;
 }
 
+// function GoBack() {
+// 	console.log("goBack function called");
+// 	window.history.back();
+// }
+
 const { post } = Astro.props;
 const {
 	data: { title, description, ogImage, publishDate, updatedDate },
@@ -40,6 +45,24 @@ const articleDate = updatedDate?.toISOString() ?? publishDate.toISOString();
 </script>
 
 <div class="spacer" style={{ height: "", border: "0px solid yellow" }}></div>
+
+<div id="gobacker" style={{ position: "fixed", top: "60px", right: "3vw", zIndex: "5" }}>
+	<!-- <button class="back button" style={{ display: "flex", padding: ".4vh .5vw" }} onclick="
+	GoBack()
+	"
+		>Go Back</button
+	> -->
+	<a href="../" class="back button" style={{ display: "flex", padding: ".4vh .5vw" }}>Go Back</a>
+</div>
+
+<!-- <script>
+	// Define the goBack function in the global scope
+	function goBack() {
+		console.log("goBack function called");
+		window.history.back();
+	}
+</script> -->
+
 <BaseLayout meta={{ title, description, articleDate, ogImage: socialImage }}>
 	<ViewTransitions />
 	<div class="gap-x-10 lg:flex lg:items-start" transition:animate="slide">

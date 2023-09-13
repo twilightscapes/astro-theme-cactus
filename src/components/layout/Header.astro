@@ -2,6 +2,8 @@
 import ThemeToggle from "../ThemeToggle.astro";
 import Search from "../Search.astro";
 import { menuLinks } from "@/site-config";
+// import { Image } from "astro:assets";
+import localBirdImage from "../../../src/assets/pirate-logo.png";
 
 // import BiGridHorizontal from "react-icons/bi";
 // import { MdOutlineRectangle } from "react-icons/md";
@@ -30,7 +32,26 @@ const url = new URL(Astro.request.url);
 		borderBottom: "1px solid #222",
 	}}
 >
-	<a href="/" class="cornerlogo" aria-current={url.pathname === "/" ? "page" : false}> Logo</a>
+	<a href="/" class="cornerlogo" aria-current={url.pathname === "/" ? "page" : false}>
+		<!-- <Image src={localBirdImage} alt="A bird sitting on a nest of eggs." /> -->
+		<img
+			class="cornerlogo"
+			src={localBirdImage.src}
+			alt="A bird sitting on a nest of eggs."
+			style={{
+				position: "absolute",
+				top: "",
+				left: "30px",
+				border: "0px solid white",
+				padding: "0",
+				maxHeight: "60px",
+				maxWidth: "100px",
+			}}
+			width="auto"
+			height="100%"
+		/>
+	</a>
+
 	<ul
 		class="topmenu"
 		style={{
@@ -93,22 +114,4 @@ const url = new URL(Astro.request.url);
 			<span class="themetext"> THEME</span>
 		</button>
 	</div>
-
-	<div id="gobacker" style={{ position: "fixed", top: "60px", right: "3vw", zIndex: "5" }}>
-		<button
-			class="back button"
-			style={{ display: "flex", padding: ".4vh .5vw" }}
-			onclick="goBack()"
-		>
-			Go Back
-		</button>
-	</div>
-
-	<script>
-		// Define the goBack function in the global scope
-		function goBack() {
-			console.log("goBack function called");
-			window.history.back();
-		}
-	</script>
 </div>
