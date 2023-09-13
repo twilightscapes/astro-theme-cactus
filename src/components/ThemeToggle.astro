@@ -2,24 +2,27 @@
 	class ThemeToggle extends HTMLElement {
 		constructor() {
 			super();
-			const button = this.querySelector("button") as HTMLButtonElement;
+			// Find the button element inside this custom element
+			const button = this.querySelector("button");
 
 			if (button) {
-				// button clicked, fire event
+				// Add a click event listener to the button
 				button.addEventListener("click", (e) => {
 					if (e.currentTarget instanceof HTMLButtonElement) {
-						// isPressed === dark mode current on
+						// isPressed === dark mode currently on
 						let isPressed = e.currentTarget.getAttribute("aria-pressed") === "true";
 
-						// invert isPressed
+						// Create a custom event to notify the theme change
 						let themeChangeEvent = new CustomEvent("theme-change", {
 							detail: {
 								theme: isPressed ? "light" : "dark",
 							},
 						});
-						// dispatch event -> ThemeProvider.astro
+
+						// Dispatch the theme change event to ThemeProvider.astro
 						document.dispatchEvent(themeChangeEvent);
-						// toggle the aria-pressed attribute
+
+						// Toggle the aria-pressed attribute
 						button.setAttribute("aria-pressed", String(!isPressed));
 					}
 				});
@@ -28,87 +31,4 @@
 	}
 
 	customElements.define("theme-toggle", ThemeToggle);
-</script>
-
-<theme-toggle class="carto">
-	<button
-		type="button"
-		id="toggle-theme"
-		style={{
-			display: "flex",
-			flexDirection: "column",
-			justifyContent: "center",
-			alignItems: "center",
-			marginTop: "0px",
-			textAlign: "center",
-		}}
-		class="themer group relative h-9 w-9 rounded-md p-2 ring-zinc-400 transition-all hover:ring-2"
-		aria-label="Toggle Dark Mode"
-	>
-		<svg
-			id="sun-svg"
-			class="absolute start-1/2 top-1/2 h-7 w-7 -translate-x-1/2 -translate-y-1/2 scale-0 opacity-0 transition-all group-aria-pressed:scale-100 group-aria-pressed:opacity-100"
-			aria-hidden="true"
-			focusable="false"
-			stroke-width="1.5"
-			viewBox="0 0 24 24"
-			fill="none"
-			xmlns="http://www.w3.org/2000/svg"
-		>
-			<path
-				d="M12 18C15.3137 18 18 15.3137 18 12C18 8.68629 15.3137 6 12 6C8.68629 6 6 8.68629 6 12C6 15.3137 8.68629 18 12 18Z"
-				stroke="#888"
-				stroke-linecap="round"
-				stroke-linejoin="round"></path>
-			<path d="M22 12L23 12" stroke="#888" stroke-linecap="round" stroke-linejoin="round"></path>
-			<path d="M12 2V1" stroke="#888" stroke-linecap="round" stroke-linejoin="round"></path>
-			<path d="M12 23V22" stroke="#888" stroke-linecap="round" stroke-linejoin="round"></path>
-			<path d="M20 20L19 19" stroke="#888" stroke-linecap="round" stroke-linejoin="round"></path>
-			<path d="M20 4L19 5" stroke="#888" stroke-linecap="round" stroke-linejoin="round"></path>
-			<path d="M4 20L5 19" stroke="#888" stroke-linecap="round" stroke-linejoin="round"></path>
-			<path d="M4 4L5 5" stroke="#888" stroke-linecap="round" stroke-linejoin="round"></path>
-			<path d="M1 12L2 12" stroke="#888" stroke-linecap="round" stroke-linejoin="round"></path>
-		</svg>
-		<svg
-			id="moon-svg"
-			class="absolute start-1/2 top-1/2 h-7 w-7 -translate-x-1/2 -translate-y-1/2 scale-0 opacity-0 transition-all group-aria-[pressed=false]:scale-100 group-aria-[pressed=false]:opacity-100"
-			aria-hidden="true"
-			focusable="false"
-			stroke-width="1.5"
-			viewBox="0 0 24 24"
-			fill="none"
-			xmlns="http://www.w3.org/2000/svg"
-		>
-			<circle cx="12" cy="12" r="10" stroke="#888" stroke-width="1.5"></circle>
-			<path
-				d="M7.63262 3.06689C8.98567 3.35733 9.99999 4.56025 9.99999 6.00007C9.99999 7.65693 8.65685 9.00007 6.99999 9.00007C5.4512 9.00007 4.17653 7.82641 4.01685 6.31997"
-				stroke="#888"
-				stroke-width="1.5"></path>
-			<path
-				d="M22 13.0505C21.3647 12.4022 20.4793 12 19.5 12C17.567 12 16 13.567 16 15.5C16 17.2632 17.3039 18.7219 19 18.9646"
-				stroke="#888"
-				stroke-width="1.5"></path>
-			<path
-				d="M14.5 8.51L14.51 8.49889"
-				stroke="#888"
-				stroke-linecap="round"
-				stroke-linejoin="round"></path>
-			<path
-				d="M10 17C11.1046 17 12 16.1046 12 15C12 13.8954 11.1046 13 10 13C8.89543 13 8 13.8954 8 15C8 16.1046 8.89543 17 10 17Z"
-				stroke="#888"
-				stroke-linecap="round"
-				stroke-linejoin="round"></path>
-		</svg>
-	</button>
-</theme-toggle>
-
-{/* Inlined to avoid FOUC on full page load, runs once to set initial attribute */}
-<script is:inline>
-const button = document.getElementById("toggle-theme");
-
-function setButtonPresssed() {
-	const bodyThemeIsDark = document.documentElement.classList.contains("dark");
-	button.setAttribute("aria-pressed", String(bodyThemeIsDark));
-}
-setButtonPresssed();
 </script>

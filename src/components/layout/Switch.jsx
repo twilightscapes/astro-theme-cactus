@@ -55,6 +55,7 @@ function Header() {
                 aria-label="Grid/Swipe View"
                 onClick={toggleArchiveView}
                 className="swipescroll"
+                id="swipebutt"
                 style={{
                     display: "flex",
                     flexDirection: "column",
