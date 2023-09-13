@@ -43,14 +43,24 @@ export default defineConfig({
 				// Configure the content collections
 				collections: [
 					{
+						folder: "content/post",
 						name: 'posts',
 						label: 'Blog Posts',
 						label_singular: 'Blog Post',
-						folder: 'src/content/post',
+						path: '{{slug}}/index',
+						media_folder: '',
+						public_folder: '',
 						create: true,
 						delete: true,
 						fields: [
 							{ name: 'title', widget: 'string', label: 'Post Title' },
+							{
+								label: "Featured Image",
+								name: "featuredImage",
+								widget: "image",
+								hint: "The primary image used for all social media, blog previews and the feature image at the top of the post",
+								required: false,
+							},
 							{
 								name: 'publishDate',
 								widget: 'datetime',
