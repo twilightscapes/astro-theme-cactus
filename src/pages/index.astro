@@ -63,7 +63,7 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
 	<div class="contentpanel horizontal-scroll panels">
 		<!-- <div class="contentpanel grid-container"> -->
 		<div class="sliderSpacer" style={{ height: "", paddingTop: "", display: "" }}></div>
-		{allPostsByDate.map((p) => <PostPreview post={p} />)}
+		{allPostsByDate.map((p) => <PostPreview post={p} as="h2" withDesc />)}
 		<div
 			style={{ textAlign: "center", display: "grid", placeContent: "center", padding: "10% 0 0 0" }}
 		>

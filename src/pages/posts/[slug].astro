@@ -17,7 +17,6 @@ const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
 
-<div class="spacer" style={{ height: "", border: "0px solid yellow" }}></div>
 <PostLayout post={entry}>
 	<Content />
 </PostLayout>

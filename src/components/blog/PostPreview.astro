@@ -40,7 +40,6 @@ const { post, withDesc = false } = Astro.props;
 
 		{post.data.title}
 	</a>
+	{withDesc && <q class="line-clamp-3 block italic">{post.data.description}</q>}
 </div>
 <!-- </Tag> -->
-
-{withDesc && <q class="line-clamp-3 block italic">{post.data.description}</q>}
