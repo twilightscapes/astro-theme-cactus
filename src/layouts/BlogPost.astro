@@ -10,11 +10,6 @@ interface Props {
 	post: CollectionEntry<"post">;
 }
 
-// function GoBack() {
-// 	console.log("goBack function called");
-// 	window.history.back();
-// }
-
 const { post } = Astro.props;
 const {
 	data: { title, description, ogImage, publishDate, updatedDate },
