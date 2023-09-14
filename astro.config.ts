@@ -93,7 +93,7 @@ export default defineConfig({
 		// }),
 	],
 	vite: {
-		plugins: [rawFonts(['.ttf']), VitePWA({
+		plugins: VitePWA({
 			registerType: "autoUpdate",
 			manifest,
 			workbox: {
@@ -105,7 +105,7 @@ export default defineConfig({
 				// This removes an errant console.log message from showing up.
 				navigateFallback: null,
 			},
-		})]
+		})
 
 		,
 		optimizeDeps: {
