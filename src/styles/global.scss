@@ -2161,6 +2161,11 @@ ul li {
     background: rgba(0, 0, 0, 0.80) !important
   }
 
+  .spacer {
+    display: block;
+    height: 160px !important;
+  }
+
   // body.archivepage .spacer, body.homepage .spacer, body.tagpage .spacer{
   //   height:160px !important;
   // }
@@ -2172,7 +2177,7 @@ ul li {
   }
 
   body .spacer {
-    height: 135px !important;
+    height: 200px !important;
   }
 
   body.archivepage .spacer,
@@ -2433,6 +2438,9 @@ ul li {
     height: 1px;
     width: 100%
   }
+
+
+
 
   .horizontal-scroll {
     transform: rotate(-90deg) translateY(-100%);
