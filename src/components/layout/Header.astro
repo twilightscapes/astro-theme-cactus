@@ -4,27 +4,23 @@ import Search from "../Search.astro";
 import { menuLinks } from "@/site-config";
 // import { Image } from "astro:assets";
 import localBirdImage from "../../../src/assets/pirate-logo.png";
-import BackgroundImage from "../../../src/assets/newspaper.webp";
+// import BackgroundImage from "../../../src/assets/newspaper.webp";
 import Switch from "../Switch.jsx";
 
 const url = new URL(Astro.request.url);
 ---
 
-<img
-	class="backimage"
-	src={BackgroundImage.src}
-	alt="Default Background"
-	style={{
-		height: "100vh",
-		width: "100vw",
-		position: "fixed",
-		zIndex: "0",
-		top: "0",
-		objectFit: "cover",
-	}}
-	width="10"
-	height="10"
-/>
+<style>
+	body {
+		/* background-image: url("../../../src/assets/newspaper.webp"); */
+		background: url("data:image/svg+xml; base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iNTAwIiBoZWlnaHQ9IjUwMCI+CjxmaWx0ZXIgaWQ9Im4iPgo8ZmVUdXJidWxlbmNlIHR5cGU9ImZyYWN0YWxOb2lzZSIgYmFzZUZyZXF1ZW5jeT0iLjciIG51bU9jdGF2ZXM9IjEwIiBzdGl0Y2hUaWxlcz0ic3RpdGNoIj48L2ZlVHVyYnVsZW5jZT4KPC9maWx0ZXI+CjxyZWN0IHdpZHRoPSI1MDAiIGhlaWdodD0iNTAwIiBmaWxsPSIjMDAwIj48L3JlY3Q+CjxyZWN0IHdpZHRoPSI1MDAiIGhlaWdodD0iNTAwIiBmaWx0ZXI9InVybCgjbikiIG9wYWNpdHk9IjAuNCI+PC9yZWN0Pgo8L3N2Zz4=");
+		object-fit: contain;
+		background-size: contain;
+		/* background-size: 55%; */
+		/* background-blend-mode: hard-light; */
+		background-blend-mode: difference;
+	}
+</style>
 
 <div
 	id="menu"
