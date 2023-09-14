@@ -1,5 +1,4 @@
 backend:
-  # name: test-repo
   name: git-gateway
   branch: main
   commit_messages:
@@ -11,7 +10,7 @@ backend:
 
 # Uncomment local_backend when you need to develop in your local
 # local_backend: true # run npx netlify-cms-proxy-server for local testing
-logo_url: ../assets/logo.svg
+
 media_folder: "src/content/post/"
 public_folder: ""
 
