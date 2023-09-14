@@ -18,7 +18,12 @@ const url = new URL(Astro.request.url);
 		background-size: contain;
 		/* background-size: 55%; */
 		/* background-blend-mode: hard-light; */
+		/* -webkit-background-blend-mode: difference;
 		background-blend-mode: difference;
+		-webkit-backdrop-filter: blur(3px);
+		backdrop-filter: blur(3px); */
+		background-blend-mode: difference;
+		-webkit-background-blend-mode: difference;
 	}
 </style>
 
