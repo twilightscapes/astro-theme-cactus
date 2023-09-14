@@ -18,7 +18,7 @@ public_folder: ""
 collections:
   - name: "posts"
     editor:
-      preview: false
+    preview: false
     label: "Posts"
     label_singular: "Post"
     description: >
@@ -37,7 +37,7 @@ collections:
           label: "Featured Image",
           name: "featuredImage",
           widget: "image",
-          hint: "The primary image used for all social media preview and the feature image at the top of the post",
+          hint: "The primary image used for all social media           preview and the feature image at the top of the post",
           required: false
         }
       - {
