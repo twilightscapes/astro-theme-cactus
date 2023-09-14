@@ -52,7 +52,7 @@ function Header() {
             <button
                 aria-label="Grid/Swipe View"
                 onClick={toggleArchiveView}
-                className="swipescroll"
+                className="swipescroll themer group relative h-9 w-9 rounded-md p-2 ring-zinc-400 transition-all hover:ring-2"
                 style={{
                     display: "flex",
                     flexDirection: "column",
