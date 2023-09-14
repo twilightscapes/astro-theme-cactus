@@ -302,14 +302,14 @@ body.scroll {
 //           scroll-snap-type: y mandatory;
 // }
 
-.scroll-area {
-  scroll-snap-align: start;
-}
+// .scroll-area {
+//   scroll-snap-align: start;
+// }
 
-.scroll-area:nth-last-child(2) {
-  scroll-snap-align: end;
-  // border:1px solid red;
-}
+// .scroll-area:nth-last-child(2) {
+//   scroll-snap-align: end;
+//   // border:1px solid red;
+// }
 
 // @media(max-width:48rem) {
 //   .scroll-container {
@@ -640,7 +640,7 @@ body.social .grid-container {
 
 .spacer {
   display: block;
-  height: 60px !important;
+  height: 80px !important;
 
 }
 
