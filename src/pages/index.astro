@@ -53,37 +53,42 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
 // ];
 ---
 
-<!-- <section
-	aria-label="Blog post list"
-	class="scroll-area2"
-	style="display: block; position: relative; z-index: 0; overflow: visible; margin: 0px auto; padding: 0px; border: 1px solid blue; width:100vh;" -->
-<div class="scroll-container scroll-area">
-	<div class="spacer" style={{ height: "", border: "0px solid yellow" }}></div>
-	<h1 class="center title">Welcome to this website</h1>
-	<!-- <div class="contentpanel horizontal-scroll panels"> -->
-	<div class="contentpanel grid-container">
-		<div class="sliderSpacer" style={{ height: "", paddingTop: "", display: "" }}></div>
-		{allPostsByDate.map((p) => <PostPreview post={p} as="h2" withDesc />)}
-		<div
-			style={{ textAlign: "center", display: "grid", placeContent: "center", padding: "10% 0 0 0" }}
-		>
-			<a
-				class="button"
-				href="/posts/2/"
-				style={{ textDecoration: "none", color: "inherit", textAlign: "center" }}
+<PageLayout meta={{ title: "Home" }}>
+	<div class="scroll-container scroll-area">
+		<div class="spacer" style={{ height: "", border: "0px solid yellow" }}></div>
+		<h1 class="center title">Welcome to this website</h1>
+		<!-- <div class="contentpanel horizontal-scroll panels"> -->
+		<div class="contentpanel grid-container">
+			<div class="sliderSpacer" style={{ height: "", paddingTop: "", display: "" }}></div>
+			{allPostsByDate.map((p) => <PostPreview post={p} as="h2" withDesc />)}
+			<div
+				style={{
+					textAlign: "center",
+					display: "grid",
+					placeContent: "center",
+					padding: "10% 0 0 0",
+				}}
 			>
-				View More
-			</a>
-		</div>
-		<div
-			style={{ textAlign: "center", display: "grid", placeContent: "center", padding: "10% 0 0 0" }}
-		>
+				<a
+					class="button"
+					href="/posts/2/"
+					style={{ textDecoration: "none", color: "inherit", textAlign: "center" }}
+				>
+					View More
+				</a>
+			</div>
+			<div
+				style={{
+					textAlign: "center",
+					display: "grid",
+					placeContent: "center",
+					padding: "10% 0 0 0",
+				}}
+			>
+			</div>
 		</div>
 	</div>
-</div>
-<!-- </section> -->
 
-<PageLayout meta={{ title: "Home" }}>
 	<!-- <section>
 		<h1 class="title mb-6">Hello World!</h1>
 		<p class="mb-4">
