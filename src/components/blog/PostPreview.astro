@@ -37,9 +37,23 @@ const { post, withDesc = false } = Astro.props;
 				<img id="1" src={import.meta.env.BASE_URL + post.data.coverImage} alt="" />
 			) : null
 		}
+		<div
+			class="panel"
+			style="display: flex; justify-content: space-between; align-items: center; margin: 10px auto; width: auto; max-width: 80vw; row-gap: 0.4vw; column-gap: 0.4vw; text-align: center; padding: 1vh 2vw; font-size: clamp(1rem, 1vw, 1rem); background: rgba(0, 0, 0, 0.7); border: 0px solid red; color: rgb(170, 170, 170);"
+		>
+			<h2 class="title" style={{ color: "#ddd" }}>{post.data.title}</h2>
 
-		{post.data.title}
+			{
+				withDesc && (
+					<q
+						class="line-clamp-1 block italic"
+						style={{ maxWidth: "50%", fontSize: "clamp(.8rem, 1.2vw, 1.8rem)" }}
+					>
+						{post.data.description}
+					</q>
+				)
+			}
+		</div>
 	</a>
-	{withDesc && <q class="line-clamp-3 block italic">{post.data.description}</q>}
 </div>
 <!-- </Tag> -->

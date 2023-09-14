@@ -62,10 +62,7 @@ const articleDate = updatedDate?.toISOString() ?? publishDate.toISOString();
 		<article class="" data-pagefind-body>
 			<div id="blog-hero"><BlogHero content={post} /></div>
 			<!-- {!!headings.length && <TOC headings={headings} />} -->
-			<div
-				class="prose prose-sm prose-cactus mt-12 prose-headings:font-semibold prose-headings:text-accent-2 prose-headings:before:absolute prose-headings:before:-ms-4 prose-headings:before:text-accent prose-headings:before:content-['#'] prose-th:before:content-none"
-				style={{ padding: "0 4%" }}
-			>
+			<div class="" style={{ padding: "0 4%" }}>
 				<slot />
 			</div>
 		</article>
