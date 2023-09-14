@@ -36,22 +36,4 @@ collections:
           default: "blog-post",
         }
       - { label: "Title", name: "title", widget: "string", tagname: "h1" }
-      - name: "posts" # Used in routes, ie.: /admin/collections/:slug/edit
-    editor:
-      preview: false
-    label: "Posts" # Used in the UI
-    label_singular: "Post" # Used in the UI, ie: "New Post"
-    description: >
-      Create awesome stuff here.
-    folder: "src/content/posts"
-    slug: "{{slug}}"
-    summary: "{{title}} — {{year}}/{{month}}/{{day}}"
-    create: true # Allow users to create new documents in this collection
-    fields: # The fields each document in this collection have
-      - {
-          label: "Template",
-          name: "template",
-          widget: "hidden",
-          default: "blog-post",
-        }
-      - { label: "Title", name: "title", widget: "string", tagname: "h1" }
+      
