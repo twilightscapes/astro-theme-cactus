@@ -15,50 +15,49 @@ media_folder: "src/content/post/"
 public_folder: ""
 
 collections:
-
-  - name: "posts" # Used in routes, ie.: /admin/collections/:slug/edit
+  - name: "posts"
     editor:
       preview: false
-    label: "Posts" # Used in the UI
-    label_singular: "Post" # Used in the UI, ie: "New Post"
+    label: "Posts"
+    label_singular: "Post"
     description: >
       Create awesome stuff here.
     folder: "src/content/post"
     slug: "{{slug}}"
     summary: "{{title}} — {{year}}/{{month}}/{{day}}"
-    path: '{{slug}}/index',
-		media_folder: '',
-		public_folder: '/{{media_folder}}',
-		create: true,
-		delete: true,
-    fields: [
-							{ name: 'title', widget: 'string', label: 'Post Title' },
-							{
-								label: "Featured Image",
-								name: "featuredImage",
-								widget: "image",
-								hint: "The primary image used for all social media, blog previews and the feature image at the top of the post",
-								required: false,
-							},
-							{
-								name: 'publishDate',
-								widget: 'datetime',
-								format: 'DD MMM YYYY',
-								date_format: 'DD MMM YYYY',
-								time_format: false,
-								label: 'Publish Date',
-							},
-							{ name: 'author', widget: 'string', label: 'Author Name', required: false },
-							{ name: 'authorURL', widget: 'string', label: 'Author URL', required: false },
-							{ name: 'description', widget: 'string', label: 'Description', required: false },
-							{ name: 'body', widget: 'markdown', label: 'Post Body' },
-							{
-								name: 'layout',
-								widget: 'select',
-								default: '../../layouts/BlogPost.astro',
-								required: false,
-								options: [
-									{ label: 'Blog Post', value: '../../layouts/BlogPost.astro', },
-								],
-							},
-						],
+    path: '{{slug}}/index'
+    media_folder: ''
+    public_folder: '/{{media_folder}}'
+    create: true
+    delete: true
+    fields:
+      - { name: 'title', widget: 'string', label: 'Post Title' }
+      - {
+          label: "Featured Image",
+          name: "featuredImage",
+          widget: "image",
+          hint: "The primary image used for all social media preview and the feature image at the top of the post",
+          required: false
+        }
+      - {
+          name: 'publishDate',
+          widget: 'datetime',
+          format: 'DD MMM YYYY',
+          date_format: 'DD MMM YYYY',
+          time_format: false,
+          label: 'Publish Date'
+        }
+      - { name: 'author', widget: 'string', label: 'Author Name', required: false }
+      - { name: 'authorURL', widget: 'string', label: 'Author URL', required: false }
+      - { name: 'description', widget: 'string', label: 'Description', required: false }
+      - { name: 'body', widget: 'markdown', label: 'Post Body' }
+      - {
+          name: 'layout',
+          widget: 'select',
+          default: '../../layouts/BlogPost.astro',
+          required: false,
+          options: [
+            { label: 'Blog Post', value: '../../layouts/BlogPost.astro' }
+          ]
+        }
+
