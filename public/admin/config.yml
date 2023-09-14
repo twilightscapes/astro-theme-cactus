@@ -12,8 +12,8 @@ backend:
 # Uncomment local_backend when you need to develop in your local
 # local_backend: true # run npx netlify-cms-proxy-server for local testing
 logo_url: ../assets/logo.svg
-media_folder: "static/assets"
-public_folder: "/assets"
+media_folder: "src/content/post/"
+public_folder: ""
 
 collections:
 
@@ -24,16 +24,41 @@ collections:
     label_singular: "Post" # Used in the UI, ie: "New Post"
     description: >
       Create awesome stuff here.
-    folder: "src/content/posts"
+    folder: "src/content/post"
     slug: "{{slug}}"
     summary: "{{title}} — {{year}}/{{month}}/{{day}}"
-    create: true # Allow users to create new documents in this collection
+    path: '{{slug}}/index',
+		media_folder: '',
+		public_folder: '/{{media_folder}}',
+		create: true,
+		delete: true,
     fields: # The fields each document in this collection have
-      - {
-          label: "Template",
-          name: "template",
-          widget: "hidden",
-          default: "blog-post",
-        }
       - { label: "Title", name: "title", widget: "string", tagname: "h1" }
-      
+        {
+								label: "Featured Image",
+								name: "featuredImage",
+								widget: "image",
+								hint: "The primary image used for all social media, blog previews and the feature image at the top of the post",
+								required: false,
+							},
+              {
+								name: 'publishDate',
+								widget: 'datetime',
+								format: 'DD MMM YYYY',
+								date_format: 'DD MMM YYYY',
+								time_format: false,
+								label: 'Publish Date',
+							},
+              { name: 'author', widget: 'string', label: 'Author Name', required: false },
+							{ name: 'authorURL', widget: 'string', label: 'Author URL', required: false },
+							{ name: 'description', widget: 'string', label: 'Description', required: false },
+							{ name: 'body', widget: 'markdown', label: 'Post Body' },
+							{
+								name: 'layout',
+								widget: 'select',
+								default: '../../layouts/BlogPost.astro',
+								required: false,
+								options: [
+									{ label: 'Blog Post', value: '../../layouts/BlogPost.astro', },
+								],
+							},
