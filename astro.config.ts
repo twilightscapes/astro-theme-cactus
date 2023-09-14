@@ -2,6 +2,7 @@ import { defineConfig } from 'astro/config';
 // import NetlifyCMS from 'astro-netlify-cms';
 import fs from 'fs';
 import react from '@astrojs/react';
+import { VitePWA } from "vite-plugin-pwa"
 import mdx from "@astrojs/mdx";
 import tailwind from "@astrojs/tailwind";
 import sitemap from "@astrojs/sitemap";
@@ -9,6 +10,8 @@ import prefetch from "@astrojs/prefetch";
 import remarkUnwrapImages from "remark-unwrap-images";
 // @ts-ignore:next-line
 import { remarkReadingTime } from "./src/utils/remark-reading-time.mjs";
+
+import { manifest } from "./src/utils/seoConfig"
 
 // https://astro.build/config
 export default defineConfig({
@@ -90,7 +93,21 @@ export default defineConfig({
 		// }),
 	],
 	vite: {
-		plugins: [rawFonts(['.ttf'])],
+		plugins: [rawFonts(['.ttf']), VitePWA({
+			registerType: "autoUpdate",
+			manifest,
+			workbox: {
+				globDirectory: 'dist',
+				globPatterns: [
+					'**/*.{js,css,svg,png,jpg,jpeg,gif,webp,woff,woff2,ttf,eot,ico}',
+				],
+				// Don't fallback on document based (e.g. `/some-page`) requests
+				// This removes an errant console.log message from showing up.
+				navigateFallback: null,
+			},
+		})]
+
+		,
 		optimizeDeps: {
 			exclude: ["@resvg/resvg-js"],
 		},
