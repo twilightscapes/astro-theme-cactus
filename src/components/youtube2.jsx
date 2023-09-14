@@ -50,43 +50,7 @@ import ReactPlayer from 'react-player/lazy'
 export default class IndexPage extends React.Component {
 
 
-  state = {
-    youtubelink: "",
-    isActive: false,
-    value: '',
-    copied: false,
-  }
 
-
-  handleInputChange = event => {
-    const target = event.target
-    const value = target.value
-    const name = target.name
-    this.setState({
-      [name]: value,
-    })
-
-
-
-  }
-
-  handleShow = () => {
-    this.setState({
-      isActive: true
-    })
-  }
-
-  handleHide = () => {
-    this.setState({
-      isActive: false
-    })
-  }
-
-  handleSubmit = event => {
-    event.preventDefault()
-    // alert(`Your Url ${this.state.youtubelink}!`)
-
-  }
 
 
 

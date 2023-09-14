@@ -1,7 +1,8 @@
 // Header.js
 // import React, { useState, useEffect, useCallback } from "react";
-
+import React from "react"
 // import BiGridHorizontal from "react-icons/bi";
+import ReactPlayer from 'react-player/lazy'
 
 function Header() {
     // const [archiveView, setArchiveView] = useState("");
@@ -68,6 +69,7 @@ function Header() {
             >
                 <span className="themetext"> TTT</span>
             </button>
+            <ReactPlayer url='https://www.youtube.com/watch?v=ysz5S6PUM-U' />
         </div>
     );
 }
