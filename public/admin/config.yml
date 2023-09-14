@@ -31,16 +31,16 @@ collections:
 		public_folder: '/{{media_folder}}',
 		create: true,
 		delete: true,
-    fields: # The fields each document in this collection have
-      - { label: "Title", name: "title", widget: "string", tagname: "h1" }
-        {
+    fields: [
+							{ name: 'title', widget: 'string', label: 'Post Title' },
+							{
 								label: "Featured Image",
 								name: "featuredImage",
 								widget: "image",
 								hint: "The primary image used for all social media, blog previews and the feature image at the top of the post",
 								required: false,
 							},
-              {
+							{
 								name: 'publishDate',
 								widget: 'datetime',
 								format: 'DD MMM YYYY',
@@ -48,7 +48,7 @@ collections:
 								time_format: false,
 								label: 'Publish Date',
 							},
-              { name: 'author', widget: 'string', label: 'Author Name', required: false },
+							{ name: 'author', widget: 'string', label: 'Author Name', required: false },
 							{ name: 'authorURL', widget: 'string', label: 'Author URL', required: false },
 							{ name: 'description', widget: 'string', label: 'Description', required: false },
 							{ name: 'body', widget: 'markdown', label: 'Post Body' },
@@ -61,3 +61,4 @@ collections:
 									{ label: 'Blog Post', value: '../../layouts/BlogPost.astro', },
 								],
 							},
+						],
