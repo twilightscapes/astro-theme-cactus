@@ -65,3 +65,18 @@ const socialImageURL = new URL(ogImage ? ogImage : "/social-card.png", Astro.url
 
 <!-- RSS auto-discovery -->
 <link rel="alternate" type="application/rss+xml" title={siteConfig.title} href="/rss.xml" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" cross-origin="anonymous" />
+<link rel="preconnect" href="https://fonts.gstatic.com" cross-origin="anonymous" />
+
+<link
+	href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+	rel="stylesheet"
+	cross-origin="anonymous"
+	referrer-policy="no-referrer-when-downgrade"
+/>
+<style>
+	html body {
+		font-family: Poppins, sans-serif !important;
+	}
+</style>

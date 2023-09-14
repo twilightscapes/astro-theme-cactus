@@ -119,49 +119,34 @@ main {
 // body.homepage #menu{display:none !important;}
 // body.homepage .spacer{display:none !important;}
 
-.kml-map {
-  height: 90vh;
-  color: #000;
-}
 
-.legend {
-  // display: none;
-  background: #fff;
-  padding: 5px;
-  margin: 0 10px 0 0;
-  border: 2px solid #000;
-  width: 150px;
 
-  h3 {
-    margin-bottom: 5px;
-    text-align: center;
-  }
 
-  div {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-  }
-}
 
-// .map-section {
-//   .section-title {
-//     .half-color::after {
-//       @include m.HalfColor("x", c.$color__frp_black);
-//     }
-//   }
+// * {
+//   box-shadow: none;
+//   filter: drop-shadow(0 0 0 rgba(0, 0, 0, .1));
 // }
 
-// *{
-//   box-shadow:none ;
-//   filter:drop-shadow(0 0 0 rgba(0,0,0,.1)) ;
-// }
 
-// .frame-content *{color:red ;}
 
-// #gatsby-focus-wrapper{height:100vh;}
-
-// :root{--button-alternate-color:#e3272d;--button-color:#e5c3d3;--font-family:-apple-system,BlinkMacSystemFont,avenir next,avenir,helvetica neue,helvetica,Ubuntu,roboto,noto,segoe ui,arial,sans-serif;--font-family-mono:Menlo,Consolas,Monaco,Liberation Mono,Lucida Console,monospace;--font-size-small:12px;--grid-gap:30px;--home-link-color:#d4d4d4;--home-link-hover-color:var(--primary-color);--home-link-hover-color:#e3272d;--input-focus-border:#83aaac;--label-text:#777;--nav-link-hover-bg:#111;--post-link-color:#0f070b;--text-color-meta:rgba(0,0,0,.5), height:100vh;}
+:root {
+  --button-alternate-color: #e3272d;
+  --button-color: #e5c3d3;
+  --font-family: Poppins, -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, Ubuntu, roboto, noto, segoe ui, arial, sans-serif !important;
+  --font-family-mono: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
+  --font-size-small: 12px;
+  --grid-gap: 30px;
+  --home-link-color: #d4d4d4;
+  --home-link-hover-color: var(--primary-color);
+  --home-link-hover-color: #e3272d;
+  --input-focus-border: #83aaac;
+  --label-text: #777;
+  --nav-link-hover-bg: #111;
+  --post-link-color: #0f070b;
+  --text-color-meta: rgba(0, 0, 0, .5), height:100vh;
+  font-size: clamp(1.2rem, 1.5vw, 4rem);
+}
 
 // body {
 //   font-family: var(--font-body);
@@ -170,36 +155,14 @@ main {
 // }
 
 
+
+
 body.blogpost .backimage {
   z-index: -5;
 }
 
 
-.free:after {
-  top: 0;
-  content: ' FREE ';
-  right: -10px;
-  // opacity:.3;
-  position: absolute;
-  // height:100%;
-  // width:100%;
-  display: block;
-  -webkit-transform: rotate(20deg);
-  transform: rotate(30deg);
-}
 
-.pro:after {
-  top: 0;
-  content: ' $199 ';
-  right: -10px;
-  // opacity:.3;
-  position: absolute;
-  // height:100%;
-  // width:100%;
-  display: block;
-  -webkit-transform: rotate(20deg);
-  transform: rotate(30deg);
-}
 
 .iconmenu {
   display: flex;
@@ -426,19 +389,19 @@ body.blogpost .gatsby-image-wrapper {
 
 
 
-// #showPosts::before, body.search::before, body::before{
-//   top:0;
-//   content:"  ";
-//   left:0;
-//   opacity:.3;
-//   position:fixed;
-//   height:100%;
-//   width:100%;
+
+// body::before {
+//   top: 0;
+//   content: "  ";
+//   left: 0;
+//   opacity: .3;
+//   position: fixed;
+//   height: 100%;
+//   width: 100%;
 //   display: block;
 //   background-size: 100%;
 //   background-color: #263238;
 //   background: url("data:image/svg+xml; base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iNTAwIiBoZWlnaHQ9IjUwMCI+CjxmaWx0ZXIgaWQ9Im4iPgo8ZmVUdXJidWxlbmNlIHR5cGU9ImZyYWN0YWxOb2lzZSIgYmFzZUZyZXF1ZW5jeT0iLjciIG51bU9jdGF2ZXM9IjEwIiBzdGl0Y2hUaWxlcz0ic3RpdGNoIj48L2ZlVHVyYnVsZW5jZT4KPC9maWx0ZXI+CjxyZWN0IHdpZHRoPSI1MDAiIGhlaWdodD0iNTAwIiBmaWxsPSIjMDAwIj48L3JlY3Q+CjxyZWN0IHdpZHRoPSI1MDAiIGhlaWdodD0iNTAwIiBmaWx0ZXI9InVybCgjbikiIG9wYWNpdHk9IjAuNCI+PC9yZWN0Pgo8L3N2Zz4=");
-
 // }
 
 
@@ -965,113 +928,6 @@ p {
 
 
 
-
-.ReactModalPortal footer,
-.ReactModalPortal div.toppad,
-.ReactModalPortal .fluff,
-.ReactModalPortal .audio,
-.ReactModalPortal .intro:before,
-.ReactModalPortal .intro:after,
-.ReactModalPortal .usability,
-.ReactModal__Content .back,
-.ReactModal__Content footer {
-  display: none !important;
-}
-
-// .ReactModalPortal .headline,
-// sharethis
-
-.ReactModal__Content #menu {
-  display: none;
-}
-
-
-//   .ReactModal__Content .pane1{top:0 ; height:102% ;}
-
-//   .ReactModalPortal div.toppad{border:0px solid blue; display: none ;}
-
-// .ReactModalPortal {margin:170px 3% 0 3% ; width:80% ; z-index: 6;}
-
-//   .ReactModal__Overlay{
-//     background: transparent !important;
-//     border:0px !important;
-//   }
-
-.ReactModal__Content {
-  position: absolute;
-  inset: 40px;
-  border: 0px solid rgb(204, 204, 204) !important;
-  background: transparent !important;
-  color: inherit !important;
-  overflow: auto;
-  border-radius: 4px;
-  outline: none;
-  padding: 20px;
-}
-
-//   .ReactModal__Overlay{
-//     // background:transparent ;
-//     // background-color:#222 ;
-//     // background: rgba(0,0,0,0.90);
-//     backdrop-filter: blur(22px); padding:0 ;}
-
-//     .ReactModal__Overlay{position:fixed; top:0;display:block; width: 100%;
-//       height: 100%; z-index: 4; }
-
-// .ReactModal__Content{padding:0 ;
-
-//   // background:var(--theme-ui-colors-siteColor) ;
-//   background:transparent ;
-//   margin:20px auto 0 auto ; overflow: auto ; border:0px solid red ; 
-//   // box-shadow: 0px 1px 10px 10px rgba(0, 0, 0, 0.5); box-shadow: none ;
-//     inset: 40px 0 0 0 ;
-//   }
-
-//   @media(max-width:48rem) {
-//     .ReactModalPortal {margin:120px 5% 0 5% ; width:90% ;}
-//     .ReactModal__Content{inset: 90px 0 0 0 ;}
-//   }
-
-
-
-//   .ReactModal__Body--open {
-//     overflow: hidden;
-//     position: fixed;
-//     width: 100%;
-//     height: 100%;
-//     overflow-y: hidden ;
-//   }
-
-// .ReactModal__Body--open {
-//   overflow-y: hidden ;
-// }
-
-
-
-
-
-// .ReactModalPortal .audio,.ReactModalPortal .clickplays *,.ReactModalPortal .contact,.ReactModalPortal .fluff,.ReactModalPortal .headline,.ReactModalPortal .intro:after,.ReactModalPortal .intro:before,.ReactModalPortal .navbar-item,.ReactModalPortal div.toppad,.ReactModalPortal footer,.ReactModalPortal header{display:none}
-
-// .ReactModalPortal .nextbutt .back{display:block}
-
-// .ReactModalPortal #menu{display:none ;}
-
-// .ReactModal__Content{
-//   background:rgba(18,20,20,.99);
-//   border:none;
-//   box-shadow:0 1px 10px 10px rgba(0,0,0,.5);
-//   box-shadow:none;
-//   margin:0 auto 0 auto;
-//   padding:0;
-//   width:99vw;
-// }
-
-// .ReactModal__Overlay{z-index:5 }
-// .ReactModal__Overlay{opacity:0;transition:opacity .2s ease-in-out}
-// .ReactModal__Overlay{-webkit-backdrop-filter:blur(22px);backdrop-filter:blur(22px);background:transparent}
-// .ReactModal__Overlay--after-open{background:rgba(22,24,24,.8);color:#fff;opacity:1;text-shadow:1px 1px 0 #111}
-// .ReactModal__Overlay--before-close{opacity:0}
-// .back:hover{background:darken}
 
 .headline {
   background: rgba(0, 0, 0, .7);
