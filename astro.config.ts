@@ -48,7 +48,7 @@ export default defineConfig({
 						label: 'Blog Posts',
 						label_singular: 'Blog Post',
 						path: '{{slug}}/index',
-						media_folder: 'src/content/post/{{slug}}',
+						media_folder: '',
 						public_folder: '/{{media_folder}}',
 						create: true,
 						delete: true,

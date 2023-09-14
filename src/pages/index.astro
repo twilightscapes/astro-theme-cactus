@@ -5,7 +5,7 @@ import PostPreview from "@/components/blog/PostPreview";
 // import SocialList from "@/components/SocialList";
 import { sortMDByDate } from "@/utils";
 
-const MAX_POSTS = 10;
+const MAX_POSTS = 5;
 const allPosts = await getCollection("post");
 const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
 
@@ -74,6 +74,10 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
 			>
 				View More
 			</a>
+		</div>
+		<div
+			style={{ textAlign: "center", display: "grid", placeContent: "center", padding: "10% 0 0 0" }}
+		>
 		</div>
 	</div>
 </div>
