@@ -52,7 +52,7 @@ function Header() {
             <button
                 aria-label="Grid/Swipe View"
                 onClick={toggleArchiveView}
-                className="swipescroll themer group relative h-9 w-9 rounded-md p-2 ring-zinc-400 transition-all hover:ring-2"
+                className="swipescroll"
                 style={{
                     display: "flex",
                     flexDirection: "column",
@@ -83,9 +83,9 @@ function Header() {
 
                     </svg>
                 )}
-                {/* <span className="themetext">
+                <span className="themetext" style={{ fontSize: '10px' }}>
                     {archiveView === "grid" ? "swipe" : "scroll"}
-                </span> */}
+                </span>
             </button>
         </div>
 

@@ -10,14 +10,14 @@
 			alignItems: "center",
 			marginTop: "0px",
 			textAlign: "center",
-			color: "#fff",
 		}}
-		class="themer group relative h-9 w-9 rounded-md p-2 ring-zinc-400 transition-all hover:ring-2"
+		class=""
 		aria-label="Toggle Dark Mode"
 	>
 		<svg
 			id="sun-svg"
 			class="transition-all"
+			style={{ width: "30px", height: "30px" }}
 			aria-hidden="true"
 			focusable="false"
 			stroke-width="1.5"
@@ -39,6 +39,7 @@
 			<path d="M4 4L5 5" stroke="#ccc" stroke-linecap="round" stroke-linejoin="round"></path>
 			<path d="M1 12L2 12" stroke="#ccc" stroke-linecap="round" stroke-linejoin="round"></path>
 		</svg>
+		<span class="themetext" style={{ fontSize: "10px" }}> Theme</span>
 	</button>
 </theme-toggle>
 
