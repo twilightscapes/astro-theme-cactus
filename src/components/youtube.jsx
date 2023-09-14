@@ -12,8 +12,8 @@ import React from "react"
 // import { IoShareOutline } from 'react-icons/io5';
 // import { AiOutlineCloseCircle } from 'react-icons/ai';
 // import { StaticImage } from "gatsby-plugin-image"
-import { ImPlay } from "react-icons/im"
-import { RiSendPlane2Line } from "react-icons/ri"
+// import { ImPlay } from "react-icons/im"
+// import { RiSendPlane2Line } from "react-icons/ri"
 // import Install from "../components/install-discount"
 // import SVG from "../../static/assets/crude-addiction.svg"
 // import ScrollAnimation from 'react-animate-on-scroll'
@@ -103,7 +103,7 @@ export default class IndexPage extends React.Component {
       <>
 
 
-        <RiSendPlane2Line />
+        {/* <RiSendPlane2Line /> */}
 
         <ReactPlayer url='https://www.youtube.com/watch?v=ysz5S6PUM-U' />
         {/* <ReactPlayer
