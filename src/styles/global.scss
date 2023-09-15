@@ -563,7 +563,7 @@ body.social .searchIcon {
   border-radius: 8px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
 
 .grid-container .post-content {
@@ -571,7 +571,7 @@ body.social .searchIcon {
 }
 
 .grid-container .post-card1 img {
-  max-height: 30vh;
+  max-height: 300px;
   margin: 0 auto;
 }
 
