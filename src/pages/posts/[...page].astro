@@ -51,49 +51,81 @@ const paginationProps = {
 				<div class="sliderSpacer" style={{ height: "", paddingTop: "", display: "" }}></div>
 				{
 					!!uniqueTags.length && (
-						<aside style={{ maxWidth: "" }}>
-							<h2 class="flex items-center text-lg font-semibold">
-								<svg
-									aria-hidden="true"
-									xmlns="http://www.w3.org/2000/svg"
-									class="h-6 w-6"
-									viewBox="0 0 24 24"
-									stroke-width="1.5"
-									stroke="currentColor"
-									fill="none"
-									stroke-linecap="round"
-									stroke-linejoin="round"
+						<aside>
+							<div
+								class=""
+								style={{
+									textAlign: "center",
+									display: "grid",
+									placeContent: "center",
+									padding: "1vh 1vw",
+									background: "rgba(0, 0, 0, .6)",
+									// height: "75vh",
+									width: "100%",
+									position: "relative",
+									top: "0",
+									border: "3px solid #000",
+									borderRadius: "12px",
+									transition: "all .3s ease-in-out",
+								}}
+							>
+								<div
+									class="panel"
+									style={{
+										maxWidth: "500px",
+										color: "#ddd",
+										borderRadius: "5px",
+										border: "4px solid #222",
+									}}
 								>
-									<path stroke="none" d="M0 0h24v24H0z" fill="none" />
-									<path d="M7.859 6h-2.834a2.025 2.025 0 0 0 -2.025 2.025v2.834c0 .537 .213 1.052 .593 1.432l6.116 6.116a2.025 2.025 0 0 0 2.864 0l2.834 -2.834a2.025 2.025 0 0 0 0 -2.864l-6.117 -6.116a2.025 2.025 0 0 0 -1.431 -.593z" />
-									<path d="M17.573 18.407l2.834 -2.834a2.025 2.025 0 0 0 0 -2.864l-7.117 -7.116" />
-									<path d="M6 9h-.01" />
-								</svg>
-								Tags
-							</h2>
-							<ul class="flex flex-wrap gap-1 text-bgColor">
-								{uniqueTags.map((tag) => (
-									<li>
-										<a
-											class="flex items-center justify-center rounded-sm bg-accent p-1"
-											style={{
-												background: "rgba(255, 255, 255, 0.2)",
-												color: "#fff",
-												textShadow: "1px 1px 0 #222",
-											}}
-											href={`/tags/${tag}/`}
-											aria-label={`View all posts with the tag: ${tag}`}
+									<h2 class="flex items-center text-lg font-semibold">
+										<svg
+											aria-hidden="true"
+											xmlns="http://www.w3.org/2000/svg"
+											class="h-6 w-6"
+											viewBox="0 0 24 24"
+											stroke-width="1.5"
+											stroke="currentColor"
+											fill="none"
+											stroke-linecap="round"
+											stroke-linejoin="round"
 										>
-											{tag}
+											<path stroke="none" d="M0 0h24v24H0z" fill="none" />
+											<path d="M7.859 6h-2.834a2.025 2.025 0 0 0 -2.025 2.025v2.834c0 .537 .213 1.052 .593 1.432l6.116 6.116a2.025 2.025 0 0 0 2.864 0l2.834 -2.834a2.025 2.025 0 0 0 0 -2.864l-6.117 -6.116a2.025 2.025 0 0 0 -1.431 -.593z" />
+											<path d="M17.573 18.407l2.834 -2.834a2.025 2.025 0 0 0 0 -2.864l-7.117 -7.116" />
+											<path d="M6 9h-.01" />
+										</svg>
+										Popular
+									</h2>
+									<ul class="flex flex-wrap gap-1 text-bgColor">
+										{uniqueTags.map((tag) => (
+											<li>
+												<a
+													class="flex items-center justify-center rounded-sm bg-accent p-1"
+													style={{
+														background: "rgba(55, 55, 55, 0.8)",
+														color: "#fff",
+														textShadow: "1px 1px 0 #222",
+													}}
+													href={`/tags/${tag}/`}
+													aria-label={`View all posts with the tag: ${tag}`}
+												>
+													{tag}
+												</a>
+											</li>
+										))}
+									</ul>
+									<div class="">
+										<br />
+										<a
+											class="sm:hover:text-accent"
+											href="/tags/"
+											aria-label="View all blog categories"
+										>
+											View all categories →
 										</a>
-									</li>
-								))}
-							</ul>
-							<div class="">
-								<br />
-								<a class="sm:hover:text-accent" href="/tags/" aria-label="View all blog categories">
-									View all tags →
-								</a>
+									</div>
+								</div>
 							</div>
 						</aside>
 					)
@@ -130,52 +162,62 @@ const paginationProps = {
 						{
 							!!uniqueTags.length && (
 								<aside>
-									<h2 class="mb-4 flex items-center text-lg font-semibold">
-										<svg
-											aria-hidden="true"
-											xmlns="http://www.w3.org/2000/svg"
-											class="h-6 w-6"
-											viewBox="0 0 24 24"
-											stroke-width="1.5"
-											stroke="currentColor"
-											fill="none"
-											stroke-linecap="round"
-											stroke-linejoin="round"
-										>
-											<path stroke="none" d="M0 0h24v24H0z" fill="none" />
-											<path d="M7.859 6h-2.834a2.025 2.025 0 0 0 -2.025 2.025v2.834c0 .537 .213 1.052 .593 1.432l6.116 6.116a2.025 2.025 0 0 0 2.864 0l2.834 -2.834a2.025 2.025 0 0 0 0 -2.864l-6.117 -6.116a2.025 2.025 0 0 0 -1.431 -.593z" />
-											<path d="M17.573 18.407l2.834 -2.834a2.025 2.025 0 0 0 0 -2.864l-7.117 -7.116" />
-											<path d="M6 9h-.01" />
-										</svg>
-										Tags
-									</h2>
-									<ul class="flex flex-wrap gap-1 text-bgColor">
-										{uniqueTags.map((tag) => (
-											<li>
-												<a
-													class="flex items-center justify-center rounded-sm bg-accent p-1"
-													style={{
-														background: "rgba(255, 255, 255, 0.2)",
-														color: "#fff",
-														textShadow: "1px 1px 0 #222",
-													}}
-													href={`/tags/${tag}/`}
-													aria-label={`View all posts with the tag: ${tag}`}
-												>
-													{tag}
-												</a>
-											</li>
-										))}
-									</ul>
-									<div class="">
-										<br />
-										<a
-											class="sm:hover:text-accent"
-											href="/tags/"
-											aria-label="View all blog categories"
-										>
-											View all tags →
-										</a>
+									<div
+										class="panel"
+										style={{
+											maxWidth: "500px",
+											color: "#ddd",
+											borderRadius: "5px",
+											border: "4px solid #222",
+										}}
+									>
+										<h2 class="mb-4 flex items-center text-lg font-semibold">
+											<svg
+												aria-hidden="true"
+												xmlns="http://www.w3.org/2000/svg"
+												class="h-6 w-6"
+												viewBox="0 0 24 24"
+												stroke-width="1.5"
+												stroke="currentColor"
+												fill="none"
+												stroke-linecap="round"
+												stroke-linejoin="round"
+											>
+												<path stroke="none" d="M0 0h24v24H0z" fill="none" />
+												<path d="M7.859 6h-2.834a2.025 2.025 0 0 0 -2.025 2.025v2.834c0 .537 .213 1.052 .593 1.432l6.116 6.116a2.025 2.025 0 0 0 2.864 0l2.834 -2.834a2.025 2.025 0 0 0 0 -2.864l-6.117 -6.116a2.025 2.025 0 0 0 -1.431 -.593z" />
+												<path d="M17.573 18.407l2.834 -2.834a2.025 2.025 0 0 0 0 -2.864l-7.117 -7.116" />
+												<path d="M6 9h-.01" />
+											</svg>
+											Popular
+										</h2>
+										<ul class="flex flex-wrap gap-1 text-bgColor">
+											{uniqueTags.map((tag) => (
+												<li>
+													<a
+														class="flex items-center justify-center rounded-sm bg-accent p-1"
+														style={{
+															background: "rgba(55, 55, 55, 0.8)",
+															color: "#fff",
+															textShadow: "1px 1px 0 #222",
+														}}
+														href={`/tags/${tag}/`}
+														aria-label={`View all posts with the tag: ${tag}`}
+													>
+														{tag}
+													</a>
+												</li>
+											))}
+										</ul>
+										<div class="">
+											<br />
+											<a
+												class="sm:hover:text-accent"
+												href="/tags/"
+												aria-label="View all blog categories"
+											>
+												View all categories →
+											</a>
+										</div>
 									</div>
 								</aside>
 							)
