@@ -495,7 +495,7 @@ body.social .searchIcon {
 .grid-container .post-card1 {
   // background: var(--theme-ui-colors-headerColor);
   // border: 1px solid rgba(0, 0, 0, .08);
-  background: rgba(0, 0, 0, .5);
+  // background: rgba(0, 0, 0, .5);
   border-radius: 5px;
   // box-shadow:0 5px 10px rgba(0, 0, 0, 0.8);
   color: #ccc;
@@ -517,14 +517,13 @@ body.social .searchIcon {
   display: grid;
   list-style: none;
   column-gap: 3vw;
-  padding: 0 3%;
+  padding: 0 1%;
   column-count: 1;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   gap: 1vw;
   padding-bottom: 0;
   margin: 0 auto 10vh auto;
   grid-auto-flow: dense;
-  /* Add this line */
 }
 
 .panel {
@@ -543,36 +542,43 @@ body.social .searchIcon {
   width: auto;
   margin: 0 auto;
   max-width: 1000px;
+  border-radius: 5px;
 }
 
 
-.post-card img {
-  border-radius: 5px
-}
 
-.grid-container .gatsby-image-wrapper img {
-  margin: 0 auto;
-}
+
+
 
 .grid-container .post-card1 {
   width: 100%;
-  padding: 1vw 1vh 0 1vw;
+  // padding: 3vw 1vh 0 1vw;
   margin: 0;
   box-sizing: border-box;
   break-inside: avoid;
   border-radius: 8px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: flex-start;
+  overflow: hidden;
+  background: transparent !important;
 }
 
 .grid-container .post-content {
   padding: 0 3% !important;
 }
 
-.grid-container .post-card1 img {
-  max-height: 300px;
+
+.grid-container .post-card1 {
+  // max-height: 45vh;
   margin: 0 auto;
+}
+
+.grid-container .post-card1 img {
+  border-radius: 5px;
+  margin-top: 2vh;
+  border: 0px solid red !important;
+  max-height: 280px;
 }
 
 .grid-container .post-card1 .title {
@@ -584,10 +590,6 @@ body.social .searchIcon {
   .grid-container {
     column-count: 2;
   }
-
-  // body.social .grid-container {
-  //   margin-left:50px;
-  // }
 }
 
 @media (min-width: 760px) and (max-width: 979.5px) {
@@ -609,14 +611,7 @@ body.social .searchIcon {
 }
 
 
-body.social .grid-container {
-  display: grid;
-  list-style: none;
-  column-gap: 3vw;
-  padding: 0 3% 0 3%;
-  // column-count: 1;
-  // grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-}
+
 
 
 .iiz__btn {
