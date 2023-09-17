@@ -1,17 +1,16 @@
 ---
 coverImage:
-  src: ./cover.png
+  src: ./artvsartst.jpg
   alt: Astro build wallpaper
 updatedDate: 14 August 2023
 title: Example Cover Image
-featuredImage: ./artvsartst.jpg
-svgImage: ./artvsartst.jpg
+# featuredImage: ./artvsartst.jpg
 tags:
   - test
   - image
-coverImage.src: ./11327077_948924101824911_1622626588_n.jpg
 publishDate: 04 July 2023
 description: This post is an example of how to add a cover image
+additionalImage: artvsartst.jpg
 ---
 
 <!-- ![Booya](./cover.png) -->

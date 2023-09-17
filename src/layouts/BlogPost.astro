@@ -12,12 +12,16 @@ interface Props {
 
 const { post } = Astro.props;
 const {
-	data: { title, description, ogImage, publishDate, updatedDate },
+	data: { title, description, ogImage, publishDate, updatedDate, additionalImage },
 	slug,
 } = post;
 const socialImage = ogImage ?? `/og-image/${slug}.png`;
 const articleDate = updatedDate?.toISOString() ?? publishDate.toISOString();
 // const { headings } = await post.render();
+const getImagePath = (imageName: string) => {
+	// Construct the path to the image in the same directory as the .md file
+	return `/posts/${slug}/${imageName}`;
+};
 ---
 
 <script>
@@ -40,32 +44,27 @@ const articleDate = updatedDate?.toISOString() ?? publishDate.toISOString();
 </script>
 
 <div id="gobacker" style={{ position: "fixed", top: "60px", right: "3vw", zIndex: "5" }}>
-	<!-- <button class="back button" style={{ display: "flex", padding: ".4vh .5vw" }} onclick="
-	GoBack()
-	"
-		>Go Back</button
-	> -->
-	<!-- <a href="../" class="back button" style={{ display: "flex", padding: ".4vh .5vw" }}>Go Back</a> -->
-
 	<GoBack />
 </div>
-
-<!-- <script>
-	// Define the goBack function in the global scope
-	function goBack() {
-		console.log("goBack function called");
-		window.history.back();
-	}
-</script> -->
 
 <BaseLayout meta={{ title, description, articleDate, ogImage: socialImage }}>
 	<ViewTransitions />
 	<div class="" transition:animate="slide">
 		<article class="" data-pagefind-body>
 			<div id="blog-hero"><BlogHero content={post} /></div>
+			{/* Render dynamic elements */}
+
 			<!-- {!!headings.length && <TOC headings={headings} />} -->
 			<div class="" style={{ padding: "0 4%" }}>
 				<!-- <img src={svgImage} /> -->
+
+				{
+					additionalImage && (
+						<Fragment>
+							<img src={getImagePath(additionalImage)} alt="Additional Image" />
+						</Fragment>
+					)
+				}
 				<slot />
 			</div>
 		</article>
