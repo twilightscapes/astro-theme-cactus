@@ -93,6 +93,9 @@ export default defineConfig({
 		// }),
 	],
 	vite: {
+		ssr: {
+			noExternal: ["react-icons"],
+		},
 		plugins: [rawFonts(['.ttf']), VitePWA({
 			registerType: "autoUpdate",
 			manifest,

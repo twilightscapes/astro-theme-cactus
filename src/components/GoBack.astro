@@ -1,8 +1,22 @@
 ---
-
+import { BiLeftArrow } from "react-icons/bi";
 ---
 
-<a
+<div style={{ display: "flex", justifyContent: "center", color: "#ccc", border: "0px solid red" }}>
+	<a
+		class="back button"
+		href="javascript:void(0);"
+		onclick="
+		window.history.back();
+		"
+		style={{ display: "flex", justifyContent: "center", padding: ".4vh .5vw" }}
+	>
+		<span class="icon -left" style={{ paddingRight: "" }}><BiLeftArrow /></span>
+		{" "}Go Back
+	</a>
+</div>
+
+<!-- <a
 	class="back button"
 	href="javascript:void(0);"
 	onclick="
@@ -10,5 +24,5 @@
 	"
 	style="display: flex; justify-content: center; padding: .4vh .5vw"
 >
-	<!-- <span class="icon -left" style="padding-right: "><BiLeftArrow /></span> --> Go Back
-</a>
+	<span class="icon -left" style="padding-right: "><BiLeftArrow /></span> Go Back
+</a> -->
