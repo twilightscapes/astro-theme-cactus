@@ -5,6 +5,7 @@ coverImage:
 updatedDate: 14 August 2023
 title: Example Cover Image
 featuredImage: ./artvsartst.jpg
+svgImage: ./artvsartst.jpg
 tags:
   - test
   - image

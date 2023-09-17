@@ -5,7 +5,7 @@ import BaseLayout from "./Base.astro";
 import BlogHero from "@/components/blog/Hero";
 // import TOC from "@/components/blog/TOC";
 import { ViewTransitions } from "astro:transitions";
-
+import GoBack from "../components/GoBack.astro";
 interface Props {
 	post: CollectionEntry<"post">;
 }
@@ -45,7 +45,9 @@ const articleDate = updatedDate?.toISOString() ?? publishDate.toISOString();
 	"
 		>Go Back</button
 	> -->
-	<a href="../" class="back button" style={{ display: "flex", padding: ".4vh .5vw" }}>Go Back</a>
+	<!-- <a href="../" class="back button" style={{ display: "flex", padding: ".4vh .5vw" }}>Go Back</a> -->
+
+	<GoBack />
 </div>
 
 <!-- <script>
@@ -63,6 +65,7 @@ const articleDate = updatedDate?.toISOString() ?? publishDate.toISOString();
 			<div id="blog-hero"><BlogHero content={post} /></div>
 			<!-- {!!headings.length && <TOC headings={headings} />} -->
 			<div class="" style={{ padding: "0 4%" }}>
+				<!-- <img src={svgImage} /> -->
 				<slot />
 			</div>
 		</article>
