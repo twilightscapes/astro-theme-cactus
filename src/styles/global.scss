@@ -547,7 +547,18 @@ body.social .searchIcon {
 }
 
 
-
+.scroll-container h1 {
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  background: rgba(0, 0, 0, 0.5);
+  color: #ddd;
+  margin: 0 auto;
+  padding: 1vh 1vw;
+  overflow: hidden;
+  text-shadow: 0 2px 1px #222;
+  border-radius: 5px;
+  max-width: 70vw;
+}
 
 
 
