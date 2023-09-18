@@ -1,3 +1,34 @@
+<script>
+	class ThemeToggle extends HTMLElement {
+		constructor() {
+			super();
+			const button = this.querySelector("button") as HTMLButtonElement;
+
+			if (button) {
+				// button clicked, fire event
+				button.addEventListener("click", (e) => {
+					if (e.currentTarget instanceof HTMLButtonElement) {
+						// isPressed === dark mode current on
+						let isPressed = e.currentTarget.getAttribute("aria-pressed") === "true";
+
+						// invert isPressed
+						let themeChangeEvent = new CustomEvent("theme-change", {
+							detail: {
+								theme: isPressed ? "light" : "dark",
+							},
+						});
+						// dispatch event -> ThemeProvider.astro
+						document.dispatchEvent(themeChangeEvent);
+						// toggle the aria-pressed attribute
+						button.setAttribute("aria-pressed", String(!isPressed));
+					}
+				});
+			}
+		}
+	}
+
+	customElements.define("theme-toggle", ThemeToggle);
+</script>
 <!-- theme-toggle.astro -->
 <theme-toggle class="carto">
 	<button
@@ -12,7 +43,7 @@
 			textAlign: "center",
 		}}
 		class=""
-		aria-label="Theme"
+		aria-label="Toggle Dark Mode"
 	>
 		<svg
 			id="sun-svg"
@@ -39,6 +70,7 @@
 			<path d="M4 4L5 5" stroke="#ccc" stroke-linecap="round" stroke-linejoin="round"></path>
 			<path d="M1 12L2 12" stroke="#ccc" stroke-linecap="round" stroke-linejoin="round"></path>
 		</svg>
+
 		<span class="themetext" style={{ fontSize: "10px" }}> Theme</span>
 	</button>
 </theme-toggle>

@@ -1,0 +1,96 @@
+---
+function getUserPref() {
+	if (typeof window !== "undefined") {
+		const storedTheme = localStorage.getItem("theme");
+		return (
+			storedTheme || (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark")
+		);
+	}
+	return "light"; // Fallback for server-side rendering
+}
+
+function setTheme(theme) {
+	if (typeof window !== "undefined") {
+		// Hydrate the theme change on the client-side
+		import.meta.env.mode === "client" &&
+			hydrate(() => {
+				const colorThemeMetaTag = document.querySelector("meta[name='theme-color']");
+				document.documentElement.classList.toggle("dark", theme === "dark");
+				const bgColour = getComputedStyle(document.body).getPropertyValue("--theme-bg");
+				colorThemeMetaTag.setAttribute("content", `hsl(${bgColour})`);
+				localStorage.setItem("theme", theme);
+			});
+	}
+}
+
+// initial setup
+if (typeof window !== "undefined") {
+	setTheme(getUserPref());
+}
+
+function ThemeToggle() {
+	if (typeof window === "undefined") {
+		return null; // Return null for server-side rendering
+	}
+
+	const [isDarkMode, setIsDarkMode] = createSignal(getUserPref());
+
+	// Function to toggle theme
+	function toggleTheme() {
+		const newTheme = isDarkMode() === "dark" ? "light" : "dark";
+		setIsDarkMode(newTheme);
+
+		// Create a custom event to notify the theme change
+		let themeChangeEvent = new CustomEvent("theme-change", {
+			detail: {
+				theme: newTheme,
+			},
+		});
+
+		// Dispatch the theme change event to ThemeProvider.astro
+		document.dispatchEvent(themeChangeEvent);
+	}
+
+	return /*html*/ `
+    <button
+      type="button"
+      id="toggle-theme"
+      style="display: flex; flex-direction: column; justify-content: center; align-items: center; marginTop: 0px; textAlign: center;"
+      class=""
+      aria-label="Theme"
+      aria-pressed="${isDarkMode() === "dark" ? "true" : "false"}"
+      onClick="${toggleTheme}"
+    >
+      <svg
+        id="sun-svg"
+        class="transition-all"
+        style="width: 30px; height: 30px; display: ${isDarkMode() === "dark" ? "none" : "block"}"
+        aria-hidden="true"
+        focusable="false"
+        stroke-width="1.5"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <!-- Sun icon path -->
+      </svg>
+      <svg
+        id="moon-svg"
+        class="transition-all"
+        style="width: 30px; height: 30px; display: ${isDarkMode() === "dark" ? "block" : "none"}"
+        aria-hidden="true"
+        focusable="false"
+        stroke-width="1.5"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <!-- Half-moon icon path -->
+      </svg>
+      <span class="themetext" style="font-size: 10px;"> Theme</span>
+    </button>
+  `;
+}
+
+ThemeToggle;
+---
