@@ -20,7 +20,7 @@ const articleDate = updatedDate?.toISOString() ?? publishDate.toISOString();
 // const { headings } = await post.render();
 const getImagePath = (imageName: string) => {
 	// Construct the path to the image in the same directory as the .md file
-	return `${slug}/${imageName}`;
+	return `content/post/${slug}/${imageName}`;
 };
 ---
 
