@@ -2,25 +2,28 @@
 	class ThemeToggle extends HTMLElement {
 		constructor() {
 			super();
-			const button = this.querySelector("button") as HTMLButtonElement;
+			// Find the button element inside this custom element
+			const button = this.querySelector("button");
 
 			if (button) {
-				// button clicked, fire event
+				// Add a click event listener to the button
 				button.addEventListener("click", (e) => {
 					if (e.currentTarget instanceof HTMLButtonElement) {
-						// isPressed === dark mode current on
+						// isPressed === dark mode currently on
 						let isPressed = e.currentTarget.getAttribute("aria-pressed") === "true";
 
-						// invert isPressed
+						// Create a custom event to notify the theme change
 						let themeChangeEvent = new CustomEvent("theme-change", {
 							detail: {
 								theme: isPressed ? "light" : "dark",
 							},
 						});
-						// dispatch event -> ThemeProvider.astro
+
+						// Dispatch the theme change event to ThemeProvider.astro
 						document.dispatchEvent(themeChangeEvent);
-						// toggle the aria-pressed attribute
-						button.setAttribute("aria-pressed", String(!isPressed));
+
+						// Toggle the aria-pressed attribute
+						e.currentTarget.setAttribute("aria-pressed", String(!isPressed));
 					}
 				});
 			}
@@ -29,6 +32,7 @@
 
 	customElements.define("theme-toggle", ThemeToggle);
 </script>
+
 <!-- theme-toggle.astro -->
 <theme-toggle class="carto">
 	<button
@@ -74,38 +78,3 @@
 		<span class="themetext" style={{ fontSize: "10px" }}> Theme</span>
 	</button>
 </theme-toggle>
-
-<script>
-	class ThemeToggle extends HTMLElement {
-		constructor() {
-			super();
-			// Find the button element inside this custom element
-			const button = this.querySelector("button");
-
-			if (button) {
-				// Add a click event listener to the button
-				button.addEventListener("click", (e) => {
-					if (e.currentTarget instanceof HTMLButtonElement) {
-						// isPressed === dark mode currently on
-						let isPressed = e.currentTarget.getAttribute("aria-pressed") === "true";
-
-						// Create a custom event to notify the theme change
-						let themeChangeEvent = new CustomEvent("theme-change", {
-							detail: {
-								theme: isPressed ? "light" : "dark",
-							},
-						});
-
-						// Dispatch the theme change event to ThemeProvider.astro
-						document.dispatchEvent(themeChangeEvent);
-
-						// Toggle the aria-pressed attribute
-						e.currentTarget.setAttribute("aria-pressed", String(!isPressed));
-					}
-				});
-			}
-		}
-	}
-
-	customElements.define("theme-toggle", ThemeToggle);
-</script>
