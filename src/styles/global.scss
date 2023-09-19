@@ -28,7 +28,7 @@ html {
 
 html,
 body {
-  height: 100vh;
+  height: 100dvh;
 }
 
 html body {
@@ -150,7 +150,7 @@ main {
   --label-text: #777;
   --nav-link-hover-bg: #111;
   --post-link-color: #0f070b;
-  --text-color-meta: rgba(0, 0, 0, .5), height:100vh;
+  --text-color-meta: rgba(0, 0, 0, .5), height:100dvh;
   font-size: clamp(1.5rem, 1.8vw, 4rem);
 }
 
@@ -231,7 +231,7 @@ body.blogpost .backimage {
 
 .timeline-wrapper {
   position: relative;
-  height: 100vh;
+  height: 100dvh;
 }
 
 .timeline-background {
@@ -239,7 +239,7 @@ body.blogpost .backimage {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
+  height: 100dvh;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -255,7 +255,7 @@ body.blogpost .backimage {
 
 .panellock {
   flex: 1;
-  height: 100vh;
+  height: 100dvh;
   background-color: var(--theme-ui-colors-background);
   // transition: all 1s ease-in-out;
   z-index: 0;
@@ -561,6 +561,20 @@ body.social .searchIcon {
 }
 
 
+@media(max-width:48rem) {
+  .scroll-container h1 {
+    opacity: 0;
+    width: 90%;
+    max-width: 100%;
+    position: absolute;
+    margin: 0 4%;
+    display: grid;
+    justify-content: center;
+    text-align: center;
+    bottom: 30vh;
+    // border: 1px solid yellow;
+  }
+}
 
 
 
