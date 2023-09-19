@@ -21,7 +21,13 @@ const { post, withDesc = false } = Astro.props;
 		{/* Check if coverImage exists and is an object */}
 		{
 			post.data.coverImage && typeof post.data.coverImage === "object" ? (
-				<Image src={post.data.coverImage.src} alt={post.data.coverImage.alt} class="object-cover" />
+				<Image
+					src={post.data.coverImage.src}
+					alt={post.data.coverImage.alt}
+					class="object-cover"
+					loading="eager"
+					fetchpriority="high"
+				/>
 			) : null
 		}
 
