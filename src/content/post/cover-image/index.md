@@ -1,6 +1,6 @@
 ---
 coverImage:
-  src: ./artvsartst.jpg
+  src: ./artvsartst.webp
   alt: Astro build wallpaper
 updatedDate: 14 August 2023
 title: Example Cover Image
@@ -10,7 +10,7 @@ tags:
   - image
 publishDate: 04 July 2023
 description: This post is an example of how to add a cover image
-additionalImage: artvsartst.jpg
+additionalImage: artvsartst.webp
 ---
 
 <!-- ![Booya](./cover.png) -->

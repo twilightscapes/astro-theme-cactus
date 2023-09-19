@@ -1,6 +1,6 @@
 ---
 title: Test Me Bitch
-featuredImage: /artvsartst.jpg
+featuredImage: /artvsartst.webp
 updatedDate: 14 August 2023
 publishDate: 04 July 2023
 author: Todd
@@ -8,7 +8,7 @@ authorURL: https://toddlambert.com
 description: This is the pages cool description that needs to be at least 60 characters
 layout: null
 coverImage:
-  src: ./carcinogen6.jpg
+  src: ./carcinogen6.webp
   alt: Astro build wallpaper
 tags:
   - test
