@@ -3,7 +3,7 @@ import ThemeToggle from "../ThemeToggle.astro";
 import Search from "../Search.astro";
 import { menuLinks } from "@/site-config";
 // import { Image } from "astro:assets";
-import localBirdImage from "../../../src/assets/pirate-logo.png";
+import localBirdImage from "../../../src/assets/pirate-logo.webp";
 // import BackgroundImage from "../../../src/assets/newspaper.webp";
 import Switch from "../Switch.jsx";
 
@@ -67,6 +67,8 @@ const url = new URL(Astro.request.url);
 			}}
 			width="auto"
 			height="100%"
+			loading="eager"
+			fetchpriority="high"
 		/>
 	</a>
 
