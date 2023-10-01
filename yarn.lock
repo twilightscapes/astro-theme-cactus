@@ -1456,10 +1456,10 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@pagefind/default-ui@^1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@pagefind/default-ui/-/default-ui-1.0.1.tgz#1c85f2a2e1f831cab8cbde0a88172514fb7a8564"
-  integrity sha512-FBlSmXbOqeTrMNGN2sOwlMJ9ellUqgqmdo2DWYWDAeMCbzdNmkIzll9ES2qlm/rGMQCurNvMJnNyJ/Lt/BZDzQ==
+"@pagefind/default-ui@^1.0.3":
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/@pagefind/default-ui/-/default-ui-1.0.3.tgz#173eb20b437c6cb7bdfacc301aba2524117a1140"
+  integrity sha512-WieFJXvezyvjZh49I8j7a7Kz3LsXYY2Uep3IWvG5NG05mmiurURXjXc+KyrpIp/iAycSnjrC1TDJ8CdES/ee3A==
 
 "@pkgr/utils@^2.3.1":
   version "2.4.2"
